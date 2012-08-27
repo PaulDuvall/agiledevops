@@ -9,7 +9,6 @@ class tomcat6 {
   service { "tomcat6":
         enable => true,
         require => [ 
-          File[$backup_directories],
           Package["tomcat6"]],
           ensure => running,
   }

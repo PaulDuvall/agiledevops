@@ -54,6 +54,12 @@ class system {
       cwd => "/tmp",
       creates => "/tmp/id_rsa.pub"                                                            
   }
+
+  download_file {"jenkins.war":                                                                                                 
+      site => "http://mirrors.jenkins-ci.org/war/latest",
+      cwd => "/usr/share/tomcat6/webapps",
+      creates => "/usr/share/tomcat6/webapps/jenkins"                                                            
+  }
   
   exec {"authorized_keys":
     command => "cat /tmp/id_rsa.pub >> /home/ec2-user/.ssh/authorized_keys",

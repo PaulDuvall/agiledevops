@@ -58,7 +58,7 @@ class system {
   download_file {"jenkins.war":                                                                                                 
       site => "http://mirrors.jenkins-ci.org/war/latest",
       cwd => "/usr/share/tomcat6/webapps",
-      creates => "/usr/share/tomcat6/webapps/jenkins"                                                            
+      creates => "/usr/share/tomcat6/webapps/jenkins.war"                                                            
   }
   
   exec {"authorized_keys":
